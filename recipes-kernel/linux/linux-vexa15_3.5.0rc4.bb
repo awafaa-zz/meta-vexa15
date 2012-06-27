@@ -2,7 +2,7 @@ require linux.inc
 
 FILESPATHPKG =. "linux-vexa15-3.5.0rc4/${MACHINE}:"
 
-SRCREV = "efikasb-10.08.00-20101205"
+SRCREV = "3.5.0rc4"
 PV = "3.5.0rc4"
 
 PR = "r0"
