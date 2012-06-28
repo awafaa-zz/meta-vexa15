@@ -1,17 +1,21 @@
-require linux.inc
+inherit kernel
 
-FILESPATHPKG =. "linux-vexa15-AEL3.3/${MACHINE}:"
+LICENSE = "GPLv2"
 
-SRCREV = "ael-12.03.00"
-PV = "3.3.0"
+FILESDIR = "${@os.path.dirname(bb.data.getVar('FILE',d,1))}/linux-vexa15_AEL3.3/${MACHINE}"
+
+DESCRIPTION = "AEL 3.3 kernel"
+
+SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/maz/arm-platforms.git;branch=ael-12.03.00;protocol=git \
+	   file://defconfig \
+	  "
+
+SRCREV = "${AUTOREV}"
+PV = "AEL3.3.0+git${SRCPV}"
 
 PR = "r0"
 
-#SRC_URI = "git://git.linaro.org/people/amitk/linux-2.6.git;branch=wip-efikamx-cleanup3;protocol=git \
-SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/maz/arm-platforms.git;branch=ael-12.03.00;protocol=git \
-	   file://defconfig"
-
-COMPATIBLE_MACHINE = "(vexa15)"
+COMPATIBLE_MACHINE = "vexa15"
 
 S = "${WORKDIR}/git"
 
