@@ -10,13 +10,13 @@ FILESEXTRAPATHS_prepend := "${WORKDIR}/${PN}"
 
 DESCRIPTION = "AEL 3.3 kernel"
 
-SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/maz/arm-platforms.git;branch=ael-12.03.00;protocol=git;destsuffix=source \
+SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/maz/arm-platforms.git;branch=ael-12.03.00;protocol=git;destsuffix=source;name=source git://linux-arm.org/arm-dts.git;branch=AEL-2012.03;protocol=git;destsuffix=dts;name=dts \
            file://defconfig \
-SRC_URI = "git://linux-arm.org/arm-dts.git;branch=AEL-2012.03;protocol=git;destsuffix=dts \
-	   "
+	  "
 
 SRCREV = "${AUTOREV}"
 #SRCREV = "2150f72fe35397cc6d6ce39866bd0462cfbcc916"
+SRCREV_FORMAT = "source_dts"
 
 PV = "3.3+git${SRCPV}"
 
